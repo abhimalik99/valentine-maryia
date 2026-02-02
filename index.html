@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Question For You 💕</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Background Music - MP3 Player -->
+    <audio id="bg-music" loop>
+        <source src="Rauf & Faik - колыбельная (Lyric Video).mp3" type="audio/mpeg">
+    </audio>
+    <button class="music-toggle" onclick="toggleMusic()" title="Toggle Music">🎵</button>
+
+    <div class="hearts-container">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <div class="puppy-overlay"></div>
+
+    <!-- Photo Collage - positioned to full screen corners -->
+    <div class="photo-collage hidden" id="photoCollage">
+        <img src="Collage/WhatsApp Image 2026-02-03 at 3.01.08 AM.jpeg" alt="Memory" class="collage-photo photo-1">
+        <img src="Collage/WhatsApp Image 2026-02-03 at 3.01.09 AM.jpeg" alt="Memory" class="collage-photo photo-2">
+        <img src="Collage/WhatsApp Image 2026-02-03 at 3.01.09 AM (1).jpeg" alt="Memory" class="collage-photo photo-3">
+        <img src="Collage/WhatsApp Image 2026-02-03 at 3.01.09 AM (2).jpeg" alt="Memory" class="collage-photo photo-4">
+    </div>
+
+    <!-- INTRO SCREEN -->
+    <div class="content" id="introScreen">
+        <div class="envelope">
+            <div class="card">
+                <div class="sparkle sparkle-1">✨</div>
+                <div class="sparkle sparkle-2">💫</div>
+                <div class="sparkle sparkle-3">✨</div>
+
+                <h1>Hey Maryia!</h1>
+                <p class="subtitle cute-text">Can I ask you something? 😏</p>
+
+                <div class="buttons">
+                    <button class="btn yes-btn" onclick="showValentineQuestion()">Yes 💕</button>
+                    <button class="btn no-btn" id="introNoBtn">No 😅</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VALENTINE QUESTION SCREEN (Hidden Initially) -->
+    <div class="hidden" id="valentineScreen">
+
+        <div class="content">
+            <div class="envelope">
+                <div class="card">
+                    <div class="sparkle sparkle-1">✨</div>
+                    <div class="sparkle sparkle-2">💫</div>
+                    <div class="sparkle sparkle-3">✨</div>
+
+                    <h1>Will you be my Valentine?</h1>
+                    <p class="subtitle">🥺👉👈</p>
+
+                    <div class="buttons">
+                        <button class="btn yes-btn" onclick="sayYes()">Yes! 💖</button>
+                        <button class="btn no-btn" id="noBtn">No 😢</button>
+                    </div>
+
+                    <p class="pleading-text">Pretty please? 🐶</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

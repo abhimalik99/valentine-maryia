@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yay! 🎉💕</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="celebration-page">
+    <!-- Background Music - continues from main page -->
+    <audio id="bg-music" loop autoplay>
+        <source src="Rauf & Faik - колыбельная (Lyric Video).mp3" type="audio/mpeg">
+    </audio>
+    <button class="music-toggle" onclick="toggleMusic()" title="Toggle Music">🎵</button>
+
+    <div class="confetti-container">
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+    </div>
+
+    <div class="celebration-content">
+        <h1 class="celebration-title">Perfect Choice!</h1>
+        <p class="celebration-subtitle">I knew you'd say yes! 💕</p>
+
+        <div class="gif-container">
+            <img src="party-time-wassup.gif" alt="Party Time Celebration" class="celebration-gif">
+        </div>
+
+        <div class="love-message">
+            <p>You just made me the happiest person ever! 🥰</p>
+            <div class="hearts-burst">
+                <span>💖</span>
+                <span>💕</span>
+                <span>💗</span>
+                <span>💘</span>
+                <span>💝</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Music Toggle
+        let musicPlaying = true;
+        function toggleMusic() {
+            const audio = document.getElementById('bg-music');
+            const btn = document.querySelector('.music-toggle');
+            if (musicPlaying) {
+                audio.pause();
+                btn.textContent = '🔇';
+            } else {
+                audio.play();
+                btn.textContent = '🎵';
+            }
+            musicPlaying = !musicPlaying;
+        }
+
+        // Start music from 12 seconds
+        window.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('bg-music');
+            audio.currentTime = 45;
+            audio.play().catch(() => { });
+        });
+
+        // Add extra celebration confetti on load
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#ff8e8e', '#ffb3b3', '#ffd6d6', '#ff4757', '#ff6b81', '#f8b500', '#ff69b4'];
+            const container = document.querySelector('.confetti-container');
+
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'extra-confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                container.appendChild(confetti);
+            }
+        }
+
+        createConfetti();
+    </script>
+</body>
+
+</html>
